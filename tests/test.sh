@@ -6,7 +6,8 @@ STOPCNT=10
 SLEEP_SEC=10
 
 while [ $CNT -lt $STOPCNT ]; do
-    wget https://artifactory-re >wget.out 2>&1
+    echo $CNT
+    curl -k https://artifactory-re
     let "CNT = ${CNT} + 1"
     sleep $SLEEP_SEC
 done
