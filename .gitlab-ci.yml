@@ -12,7 +12,10 @@ BUILD:
   stage: build
   script:
   - echo "Running build in $ENV environment"
-  - ls -l 
+  - cat /etc/centos-release
+  - pwd
+  - chmod +x builds/build.sh
+  - build/build.sh
   tags:
   - re-runner-build
 
@@ -20,7 +23,10 @@ TEST:
   stage: test
   script:
   - echo "Running tests in $ENV environment"
-  - ls -l 
+  - cat /etc/centos-release
+  - pwd
+  - chmod +x tests/test.sh
+  - tests/test.sh
   tags:
   - re-runner-testing 
 
