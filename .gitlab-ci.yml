@@ -1,0 +1,30 @@
+image:
+  name: ${ARTIFACTORY_URL}:5000/centos:7.6.1810
+
+stages:
+  - build
+  - test
+
+before_script:
+  - echo "ENV=$ENV"
+
+BUILD:
+  stage: build
+  script:
+  - echo "Running build in $ENV environment"
+  - ls -l 
+  tags:
+  - re-runner-build
+
+TEST:
+  stage: test
+  script:
+  - echo "Running tests in $ENV environment"
+  - ls -l 
+  tags:
+  - re-runner-testing 
+
+after_script:
+  - docker rm -v $(docker ps --filter status=exited -q | grep -v -E $(docker ps -aq --filter='name=runner' | paste -sd "|" -) 2>/dev/null) &>/dev/null || true
+  - docker rmi $(docker images | grep "none" | awk '/ / { print $3 }') &>/dev/null || true
+  - docker rmi $(docker images --filter dangling=true -q 2>/dev/null) &>/dev/null || true
