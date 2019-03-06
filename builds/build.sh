@@ -2,8 +2,8 @@
 
 echo "Running the builds"
 CNT=0 
-STOPCNT=10
-SLEEP_SEC=10
+STOPCNT=100
+SLEEP_SEC=1
 
 while [ $CNT -lt $STOPCNT ]; do
     echo $CNT
