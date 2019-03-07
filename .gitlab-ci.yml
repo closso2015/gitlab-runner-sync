@@ -17,7 +17,7 @@ BUILD:
   - chmod +x builds/build.sh
   - builds/build.sh
   tags:
-  - re-runner-build
+  - re-shared-secure
 
 TEST:
   stage: test
