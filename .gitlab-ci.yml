@@ -17,7 +17,7 @@ BUILD:
   - chmod +x builds/build.sh
   - builds/build.sh
   tags:
-  - re-shared-secure
+  - CbP-Linux-docker
 
 TEST:
   stage: test
