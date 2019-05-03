@@ -15,8 +15,8 @@ BUILD:
   - whoami
   - cat /etc/centos-release
   - pwd
-  - chmod +x builds/build.sh
-  - builds/build.sh
+  - chmod +x builds/*
+  - builds/spawn_build.sh
   tags:
   - re-shell-test
 
