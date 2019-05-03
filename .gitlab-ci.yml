@@ -12,12 +12,13 @@ BUILD:
   stage: build
   script:
   - echo "Running build in $ENV environment"
+  - whoami
   - cat /etc/centos-release
   - pwd
   - chmod +x builds/build.sh
   - builds/build.sh
   tags:
-  - re-shared-secure
+  - re-shell-test
 
 TEST:
   stage: test
