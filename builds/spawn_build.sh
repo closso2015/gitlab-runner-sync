@@ -1,3 +1,5 @@
+pwd
+ls -al 
 rm -f done.txt
 
 ./build.sh done.txt &
