@@ -1,6 +1,6 @@
 rm -f done.txt
 
-build.sh done.txt &
+./build.sh done.txt &
 
 echo "Waiting for build.sh"
 CNT=0 
