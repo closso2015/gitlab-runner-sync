@@ -10,7 +10,6 @@ before_script:
 
 BUILD:
   stage: build
-  timeout: 25
   script:
   - echo "Running build in $ENV environment"
   - whoami
