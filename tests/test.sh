@@ -2,7 +2,7 @@
 
 echo "Running the tests"
 CNT=0 
-STOPCNT=20
+STOPCNT=2
 SLEEP_SEC=10
 
 while [ $CNT -lt $STOPCNT ]; do
