@@ -6,7 +6,7 @@ rm -f done.txt
 
 echo "Waiting for build.sh"
 CNT=0 
-STOPCNT=1200
+STOPCNT=12
 SLEEP_SEC=1
 
 while [ $CNT -lt $STOPCNT ]; do
