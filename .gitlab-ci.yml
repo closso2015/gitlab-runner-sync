@@ -19,7 +19,7 @@ BUILD:
   - cd builds
   - ./spawn_build.sh
   tags:
-  - re-shell-test
+  - aws-secure
 
 TEST:
   stage: test
