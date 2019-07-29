@@ -12,6 +12,7 @@ BUILD:
   stage: build
   script:
   - echo "Running build in $ENV environment"
+  - cat /etc/centos-release
   - whoami
   - cat /etc/centos-release
   - pwd
@@ -29,6 +30,8 @@ TEST:
   - pwd
   - chmod +x tests/test.sh
   - tests/test.sh
+  tags:
+  - aws-secure
 
 after_script:
   - docker rm -v $(docker ps --filter status=exited -q | grep -v -E $(docker ps -aq --filter='name=runner' | paste -sd "|" -) 2>/dev/null) &>/dev/null || true
