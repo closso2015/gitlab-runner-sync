@@ -19,9 +19,6 @@ BUILD:
   - chmod +x builds/*
   - cd builds
   - ./spawn_build.sh
-  - docker pull artifactory-pub.bit9.local:5000/alpine:latest
-  - docker images
-  - docker rmi  artifactory-pub.bit9.local:5000/alpine:latest
   tags:
   - jira-access
 
