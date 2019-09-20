@@ -20,7 +20,7 @@ BUILD:
   - cd builds
   - ./spawn_build.sh
   tags:
-  - jira-access
+  - csr-dev-test-access
 
 TEST:
   stage: test
