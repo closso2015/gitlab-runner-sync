@@ -17,6 +17,7 @@ BUILD:
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
   - ls -l 
   - ls -al /cache
+  - [[ -d /cache/gitlab-runner-testing ]] && rm -rf /cache/gitlab-runner-testing
   - mkdir /cache/gitlab-runner-testing
   - echo "testing" >> /cache/gitlab-runner-testing/testfile.txt
   - cat /etc/centos-release
