@@ -3,7 +3,7 @@
 echo "Running the tests"
 CNT=0 
 STOPCNT=2
-SLEEP_SEC=10
+SLEEP_SEC=3
 
 while [ $CNT -lt $STOPCNT ]; do
     echo $CNT
