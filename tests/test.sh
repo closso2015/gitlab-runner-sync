@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Running the tests"
+echo "Running the tests ${ARTIFACTORY_URL}"
 CNT=0 
 STOPCNT=2
 SLEEP_SEC=3
