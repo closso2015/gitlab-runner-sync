@@ -16,36 +16,17 @@ before_script:
 BUILD:
   stage: build
   script:
-  - echo "Running build in $ENV environment"
-  - cat /etc/centos-release
-  - whoami
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
-  - ls -l 
-  - ls -al /cache
-  - rm -rf /cache/gitlab-runner-testing
-  - mkdir /cache/gitlab-runner-testing 
-  - echo "testing" >> /cache/gitlab-runner-testing/testfile.txt
-  - cat /etc/centos-release
-  - pwd
-  - chmod +x builds/*
-  - cd builds
-  - ./spawn_build.sh
   tags:
-  - cel-test-cache
+  - re-test
 
 TEST:
   stage: test
   script:
   - echo "Running tests in $ENV environment"
-  - cat /etc/centos-release
-  - cat /cache/gitlab-runner-testing/testfile.txt
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
-  - ls -l 
-  - pwd
-  - chmod +x tests/test.sh
-  - tests/test.sh
   tags:
-  - cel-test-cache
+  - re-test
 
 after_script:
   - docker rm -v $(docker ps --filter status=exited -q | grep -v -E $(docker ps -aq --filter='name=runner' | paste -sd "|" -) 2>/dev/null) &>/dev/null || true
