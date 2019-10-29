@@ -1,11 +1,7 @@
 image:
   name: ${ARTIFACTORY_URL}:5000/centos:7.6.1810
 
-cache:
-  paths:
-    - builds
-    - tests
-    
+
 stages:
   - build
   - test
