@@ -39,7 +39,7 @@ TEST:
   - echo "Running tests in $ENV environment"
   - cat /etc/centos-release
   - cat /cache/gitlab-runner-testing/testfile.txt
-  - if [[ -e /cache/gitlab-runner-test ]]; then rm -rf rm -rf /cache/gitlab-runner-testing fi
+  - if [[ -e /cache/gitlab-runner-test ]]; then rm -rf /cache/gitlab-runner-testing fi
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
   - ls -l 
   - pwd
