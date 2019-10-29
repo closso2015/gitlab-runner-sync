@@ -7,7 +7,7 @@ SLEEP_SEC=1
 
 while [ $CNT -lt $STOPCNT ]; do
     echo $CNT
-    curl -k https://artifactory-re
+    curl -Is -k https://${ARTIFACTORY_URL}
     let "CNT = ${CNT} + 1"
     sleep $SLEEP_SEC
 done
