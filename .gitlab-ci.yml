@@ -13,6 +13,7 @@ BUILD:
   stage: build
   script:
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
+  - [[ -e /cache && echo "broken" ]]
   tags:
   - re-test
 
