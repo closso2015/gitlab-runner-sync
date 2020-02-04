@@ -14,7 +14,7 @@ BUILD:
   script:
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
   - mkdir repofiles
-  - mv artifactory-pub-centos7.repo repofiles
+  - mv artifactory-pub-centos7.repo repofiles/repofile-`date +"%m-%d-%y-%s"`
   artifacts:
       paths:
       - repofiles/
