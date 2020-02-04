@@ -13,6 +13,11 @@ BUILD:
   stage: build
   script:
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
+  - mkdir repofiles
+  - mv artifactory-pub-centos7.repo repofiles
+  artifacts:
+      paths:
+      - repofiles/
   tags:
   - tau-fms
 
@@ -20,7 +25,9 @@ TEST:
   stage: test
   script:
   - echo "Running tests in $ENV environment"
-  - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
+  - ls -alR
+  dependencies:
+      - BUILD
   tags:
   - tau-fms
 
