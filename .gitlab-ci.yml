@@ -1,5 +1,5 @@
-image:
-  name: ${ARTIFACTORY_URL}:5000/centos:7.6.1810
+#image:
+#  name: ${ARTIFACTORY_URL}:5000/centos:7.6.1810
 
 
 stages:
@@ -18,8 +18,8 @@ BUILD:
   artifacts:
       paths:
       - repofiles/
-  tags:
-  - tau-fms
+#  tags:
+#  - tau-fms
 
 TEST:
   stage: test
@@ -28,10 +28,11 @@ TEST:
   - ls -alR
   dependencies:
       - BUILD
-  tags:
-  - tau-fms
+#  tags:
+#  - tau-fms
 
 after_script:
-  - docker rm -v $(docker ps --filter status=exited -q | grep -v -E $(docker ps -aq --filter='name=runner' | paste -sd "|" -) 2>/dev/null) &>/dev/null || true
-  - docker rmi $(docker images | grep "none" | awk '/ / { print $3 }') &>/dev/null || true
-  - docker rmi $(docker images --filter dangling=true -q 2>/dev/null) &>/dev/null || true
+   - echo "Done"
+#  - docker rm -v $(docker ps --filter status=exited -q | grep -v -E $(docker ps -aq --filter='name=runner' | paste -sd "|" -) 2>/dev/null) &>/dev/null || true
+#  - docker rmi $(docker images | grep "none" | awk '/ / { print $3 }') &>/dev/null || true
+#  - docker rmi $(docker images --filter dangling=true -q 2>/dev/null) &>/dev/null || true
