@@ -18,8 +18,8 @@ BUILD:
   artifacts:
       paths:
       - repofiles/
-#  tags:
-#  - tau-fms
+  tags:
+  - hq-runner-cont
 
 TEST:
   stage: test
@@ -28,8 +28,8 @@ TEST:
   - ls -alR
   dependencies:
       - BUILD
-#  tags:
-#  - tau-fms
+  tags:
+  - hq-runner-cont
 
 after_script:
    - echo "Done"
