@@ -19,7 +19,7 @@ BUILD:
       paths:
       - repofiles/
   tags:
-  - hq-runner-cont
+  - re-mac-runner
 
 TEST:
   stage: test
@@ -29,7 +29,7 @@ TEST:
   dependencies:
       - BUILD
   tags:
-  - hq-runner-cont
+  - re-mac-runner
 
 after_script:
    - echo "Done"
