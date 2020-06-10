@@ -15,12 +15,15 @@ BUILD:
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
   - mkdir repofiles
   - mv artifactory-pub-centos7.repo repofiles/repofile-`date +"%m-%d-%y-%s"`
+  - echo $GITHUB_USERNAME
+  - echo $GITHUB_PASSWORD
 #  - git clone https://gitlab.bit9.local/ReleaseEngineering/gitlab-runner-testing2.git
   artifacts:
       paths:
       - repofiles/
   tags:
-  - re-mac-runner
+  - tau
+#  - re-mac-runner
 
 TEST:
   stage: test
@@ -30,7 +33,8 @@ TEST:
   dependencies:
       - BUILD
   tags:
-  - re-mac-runner
+  - tau
+#  - re-mac-runner
 
 after_script:
    - echo "Done"
