@@ -14,9 +14,8 @@ BUILD:
   script:
   - curl -O  -k https://${ARTIFACTORY_URL}/artifactory/artifactory_yum_repo_config/artifactory-pub-centos7.repo
   - mkdir repofiles
+  - echo "$GITHUB_USERNAME  $GITHUB_PASSWORD"
   - mv artifactory-pub-centos7.repo repofiles/repofile-`date +"%m-%d-%y-%s"`
-  - echo $GITHUB_USERNAME
-  - echo $GITHUB_PASSWORD
 #  - git clone https://gitlab.bit9.local/ReleaseEngineering/gitlab-runner-testing2.git
   artifacts:
       paths:
